@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://younatics.github.io/"/>
-  <updated>2017-06-01T08:57:22.000Z</updated>
+  <updated>2017-06-01T09:03:46.000Z</updated>
   <id>http://younatics.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://younatics.github.io/2017/06/01/swift-data-structure-kr/"/>
     <id>http://younatics.github.io/2017/06/01/swift-data-structure-kr/</id>
     <published>2017-06-01T07:45:31.000Z</published>
-    <updated>2017-06-01T08:57:22.000Z</updated>
+    <updated>2017-06-01T09:03:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>Collection Data 스위프트 구조를 소개합니다.좋은 글이라 생각되어 번역합니다. 핵심적인 부분을 제외하고는 번역을 제외하고 의역했습니다. 본문은 <a href="https://www.raywenderlich.com/123100/collection-data-structures-swift-2" target="_blank" rel="external">여기</a>를 참고해주세요.</p>
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>많은 데이터를 처리하는 어플리케이션을 만들고 있을 때를 생각해보세요. 언제 데이터를 넣고 어떻게 그 많은 데이터를 효율적으로 핸들링을 하실 건가요?<br>많은 데이터를 처리 할 경우에는 <code>Array</code>, <code>Dictionary</code>, <code>Sets</code> 에 대한 근본적인 개념을 알고 있는게 중요합니다. 이 <code>collection data structures</code> 에 명확한 개념을 가질 경우 처리 속도는 어마어마하게 빨라 질 것 입니다.</p>
