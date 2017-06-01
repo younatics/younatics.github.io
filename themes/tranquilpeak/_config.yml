@@ -58,10 +58,10 @@ sidebar:
         #     url: /#about
         #     icon: question
     author_links:
-        resume:
-            title: Who am I
-            url: https://github.com/younatics
-            icon: question
+        # resume:
+        #     title: Who am I
+        #     url: https://github.com/younatics
+        #     icon: question
         github:
             title: global.github
             url: https://github.com/younatics
@@ -86,10 +86,10 @@ sidebar:
             title: global.linkedin
             url: https://www.linkedin.com/in/seungyoun-yi-9a5885b3/
             icon: linkedin
-        mail:
-            title: global.mail
-            url: younatics@gmail.com
-            icon: envelope-o
+        # mail:
+        #     title: global.mail
+        #     url: younatics@gmail.com
+        #     icon: envelope-o
     rss:
         rss:
             title: global.rss

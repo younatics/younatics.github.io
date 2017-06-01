@@ -6,7 +6,7 @@ tags:
 categories:
 - Swift
 thumbnailImagePosition: right
-thumbnailImage: big-o.png
+thumbnailImage: /images/big-o.png
 
 ---
 Collection Data 스위프트 구조를 소개합니다.좋은 글이라 생각되어 번역합니다. 핵심적인 부분을 제외하고는 번역을 제외하고 의역했습니다. 본문은 [여기](https://www.raywenderlich.com/123100/collection-data-structures-swift-2)를 참고해주세요.
