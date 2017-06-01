@@ -35,9 +35,9 @@ sidebar:
             title: global.home
             url: /
             icon: home
-        categories:
-            title: global.categories
-            url: /all-categories
+        Swift:
+            title: Swift
+            url: /Swift
             icon: bookmark
         tags:
             title: global.tags
@@ -53,39 +53,43 @@ sidebar:
             icon: search
             # `open-algolia-search` classes are used to open algolia search modal
             class: open-algolia-search
-        about:
-            title: global.about
-            url: /#about
-            icon: question
+        # about:
+        #     title: global.about
+        #     url: /#about
+        #     icon: question
     author_links:
-        # github:
-        #     title: global.github
-        #     url: https://github.com/
-        #     icon: github
-        # stack_overflow:
-        #     title: global.stack_overflow
-        #     url: http://stackoverflow.com/users
-        #     icon: stack-overflow
-        # twitter:
-        #     title: global.twitter
-        #     url: https://twitter.com/
-        #     icon: twitter
-        # facebook:
-        #     title: global.facebook
-        #     url: https://facebook.com/
-        #     icon: facebook
+        resume:
+            title: Who am I
+            url: https://github.com/younatics
+            icon: question
+        github:
+            title: global.github
+            url: https://github.com/younatics
+            icon: github
+        stack_overflow:
+            title: global.stack_overflow
+            url: https://stackoverflow.com/users/4667713/seungyoun-yi
+            icon: stack-overflow
+        twitter:
+            title: global.twitter
+            url: https://twitter.com/younatics
+            icon: twitter
+        facebook:
+            title: global.facebook
+            url: https://facebook.com/younaticss
+            icon: facebook
         # google_plus:
         #     title: global.google_plus
         #     url: https://plus.google.com/
         #     icon: google-plus
-        # linked_in:
-        #     title: global.linkedin
-        #     url: https://www.linkedin.com/profile/
-        #     icon: linkedin
-        # mail:
-        #     title: global.mail
-        #     url: mailto:
-        #     icon: envelope-o
+        linked_in:
+            title: global.linkedin
+            url: https://www.linkedin.com/in/seungyoun-yi-9a5885b3/
+            icon: linkedin
+        mail:
+            title: global.mail
+            url: younatics@gmail.com
+            icon: envelope-o
     rss:
         rss:
             title: global.rss
@@ -112,15 +116,15 @@ header:
 # Author
 # Your biography and your job is editable in each languages files in `languages` folder
 author:
-    email:
-    location:
+    email: younatics@gmail.com
+    location: Seoul, Korea
     # Your profile picture located in folder `source/_images/` (development)
     # or in `source/assets/images/` (production)
     # or you can use an external url
     # Overwritten by your gravatar image if `gravatar_email` is filled
-    picture:
+    picture: https://avatars2.githubusercontent.com/u/6335975?v=3&s=460
     # Your Twitter username without the @. E.g : `tranquilpeak`
-    twitter:
+    twitter: younatics
     # Your personal google plus profile id, not your blog or business page id.
     # E.g : `+JohnDoe` or `123812884128439`
     google_plus:
@@ -208,29 +212,4 @@ sharing_options:
     google_plus:
         icon: "fa-google-plus"
         url: "https://plus.google.com/share?url={{post.permalink}}"
-    # Asian social networks
-    # weibo:
-    #     title: "Weibo"
-    #     icon: "fa-weibo"
-    #     url: "http://service.weibo.com/share/share.php?&title={{post.permalink}}"
-    # qq:
-    #     title: "QQ"
-    #     icon: "fa-qq"
-    #     url: "http://connect.qq.com/widget/shareqq/index.html?url={{post.permalink}}&title={{post.title}}"
-    # qzone:
-    #     title: "Qzone"
-    #     icon: "fa-star"
-    #     url: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{post.permalink}}"
-    # renren:
-    #     title: "Renren"
-    #     icon: "fa-renren"
-    #     url: "http://widget.renren.com/dialog/share?resourceUrl={{post.permalink}}"
-    # Russian social networks
-    # vk:
-    #     title: "VK"
-    #     icon: "fa-vk"
-    #     url: "https://vk.com/share.php?url={{post.permalink}}"
-    # odnoklassniki:
-    #     title: "Odnoklassniki"
-    #     icon: "fa-odnoklassniki"
-    #     url: "https://connect.ok.ru/offer?url={{post.permalink}}"
+
