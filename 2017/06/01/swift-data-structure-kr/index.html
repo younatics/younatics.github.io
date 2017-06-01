@@ -9,6 +9,8 @@
     <title>Collection Data Structures Swift - KR - younatics</title>
     <meta name="author" content="Seungyoun Yi">
     
+        <meta name="keywords" content="Swift,ReactNative,">
+    
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
@@ -20,12 +22,12 @@
 <meta property="og:url" content="http://younatics.github.io/2017/06/01/swift-data-structure-kr/index.html">
 <meta property="og:site_name" content="younatics">
 <meta property="og:description" content="Collection Data 스위프트 구조를 소개합니다.좋은 글이라 생각되어 번역합니다. 핵심적인 부분을 제외하고는 번역을 제외하고 의역했습니다. 본문은 여기를 참고해주세요. Introduction많은 데이터를 처리하는 어플리케이션을 만들고 있을 때를 생각해보세요. 언제 데이터를 넣고 어떻게 그 많은 데이터를 효율적으로 핸들링을 하실 건가요?많은 데이터를">
-<meta property="og:image" content="http://younatics.github.io/2017/06/01/swift-data-structure-kr/Images/big-o.png">
-<meta property="og:updated_time" content="2017-06-01T08:14:34.000Z">
+<meta property="og:image" content="http://younatics.github.io/images/big-o.png">
+<meta property="og:updated_time" content="2017-06-01T08:57:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Collection Data Structures Swift - KR">
 <meta name="twitter:description" content="Collection Data 스위프트 구조를 소개합니다.좋은 글이라 생각되어 번역합니다. 핵심적인 부분을 제외하고는 번역을 제외하고 의역했습니다. 본문은 여기를 참고해주세요. Introduction많은 데이터를 처리하는 어플리케이션을 만들고 있을 때를 생각해보세요. 언제 데이터를 넣고 어떻게 그 많은 데이터를 효율적으로 핸들링을 하실 건가요?많은 데이터를">
-<meta name="twitter:image" content="http://younatics.github.io/2017/06/01/swift-data-structure-kr/Images/big-o.png">
+<meta name="twitter:image" content="http://younatics.github.io/images/big-o.png">
 <meta name="twitter:creator" content="@younatics">
     
     
@@ -34,6 +36,9 @@
     
         <meta property="og:image" content="https://avatars2.githubusercontent.com/u/6335975?v=3&amp;s=460"/>
     
+    
+        <meta property="og:image" content="http://younatics.github.io/2017/06/01/swift-data-structure-kr/big-o.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://younatics.github.io/2017/06/01/swift-data-structure-kr/big-o.png" />
     
     
     
@@ -88,7 +93,7 @@
                 </a>
                 <h4 class="sidebar-profile-name">Seungyoun Yi</h4>
                 
-                    <h5 class="sidebar-profile-bio"><p>author.bio</p>
+                    <h5 class="sidebar-profile-bio"><p>Mobile Developer</p>
 </h5>
                 
             </div>
@@ -111,12 +116,12 @@
                 <li class="sidebar-button">
                     
                         <a  class="sidebar-button-link "
-                             href="/Swift"
+                             href="/all-categories"
                             
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                        <span class="sidebar-button-desc">Swift</span>
+                        <span class="sidebar-button-desc">Categories</span>
                     </a>
             </li>
             
@@ -141,18 +146,6 @@
                     
                         <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
                         <span class="sidebar-button-desc">Archives</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link open-algolia-search"
-                             href="#search"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                        <span class="sidebar-button-desc">Search</span>
                     </a>
             </li>
             
@@ -301,7 +294,7 @@
 <li><code>O(2^n)</code>: 2의 데이터 구조의 갯수 제곱만큼 증가합니다. 매우 나쁜 퍼포먼스를 보여줍니다. 원소 n개 집합의 모든 부분집합을 출력하는 경우의 시간복잡도와 같습니다.</li>
 <li><code>O(n!)</code>: 최악의 케이스입니다. 이렇게 코딩이 될 경우에는 답이 없습니다.</li>
 </ul>
-<p><img src="Images/big-o.png" alt="Big-o"></p>
+<p><img src="/images/big-o.png" alt="Big-o"></p>
 <h2 id="Common-iOS-Data-Structures"><a href="#Common-iOS-Data-Structures" class="headerlink" title="Common iOS Data Structures"></a>Common iOS Data Structures</h2><p><code>Array</code>, <code>Dictionaries</code>, <code>Sets</code> 가 가장 흔한 데이터 구조입니다. 각각의 구조와 성능에 대해 알아봅니다. 또한 <code>Objectice-C</code>와<code>Swift</code>에서 각각의 데이터구조를 비교해봅니다.</p>
 <h3 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h3><ul>
 <li><code>Array</code>는 순서를 가지고 있는 배열입니다. <code>index</code>를 통해서 각각의 아이템에 접근 할 수 있습니다. 인덱스를 가지고 아이템을 가져오는 것을 <code>subscripting</code>이라고 합니다.</li>
@@ -418,7 +411,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/01/hello-world/" data-tooltip="Hello World">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -500,7 +493,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/01/hello-world/" data-tooltip="Hello World">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -602,14 +595,14 @@
         
             <h4 id="about-card-name">Seungyoun Yi</h4>
         
-            <div id="about-card-bio"><p>author.bio</p>
+            <div id="about-card-bio"><p>Mobile Developer</p>
 </div>
         
         
             <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>ZIGBANG</p>
 
             </div>
         
@@ -644,24 +637,11 @@
                 
                 <div class="media">
                     
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://younatics.github.io/2017/06/01/hello-world/">
-                            <h3 class="media-heading">Hello World</h3>
+                    <div class="media-left">
+                        <a class="link-unstyled" href="http://younatics.github.io/2017/06/01/swift-data-structure-kr/">
+                            <img class="media-image" src="http://younatics.github.io/2017/06/01/swift-data-structure-kr/big-o.png" width="90" height="90"/>
                         </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    Jun 1, 2017
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
                     </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="http://younatics.github.io/2017/06/01/swift-data-structure-kr/">
@@ -687,7 +667,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                2 posts found
+                1 post found
             </p>
         </div>
     </div>

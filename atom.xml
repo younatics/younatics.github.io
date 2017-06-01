@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://younatics.github.io/"/>
-  <updated>2017-06-01T08:14:34.000Z</updated>
+  <updated>2017-06-01T08:57:22.000Z</updated>
   <id>http://younatics.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://younatics.github.io/2017/06/01/swift-data-structure-kr/"/>
     <id>http://younatics.github.io/2017/06/01/swift-data-structure-kr/</id>
     <published>2017-06-01T07:45:31.000Z</published>
-    <updated>2017-06-01T08:14:34.000Z</updated>
+    <updated>2017-06-01T08:57:22.000Z</updated>
     
     <content type="html"><![CDATA[<p>Collection Data 스위프트 구조를 소개합니다.좋은 글이라 생각되어 번역합니다. 핵심적인 부분을 제외하고는 번역을 제외하고 의역했습니다. 본문은 <a href="https://www.raywenderlich.com/123100/collection-data-structures-swift-2" target="_blank" rel="external">여기</a>를 참고해주세요.</p>
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>많은 데이터를 처리하는 어플리케이션을 만들고 있을 때를 생각해보세요. 언제 데이터를 넣고 어떻게 그 많은 데이터를 효율적으로 핸들링을 하실 건가요?<br>많은 데이터를 처리 할 경우에는 <code>Array</code>, <code>Dictionary</code>, <code>Sets</code> 에 대한 근본적인 개념을 알고 있는게 중요합니다. 이 <code>collection data structures</code> 에 명확한 개념을 가질 경우 처리 속도는 어마어마하게 빨라 질 것 입니다.</p>
@@ -41,7 +41,7 @@
 <li><code>O(2^n)</code>: 2의 데이터 구조의 갯수 제곱만큼 증가합니다. 매우 나쁜 퍼포먼스를 보여줍니다. 원소 n개 집합의 모든 부분집합을 출력하는 경우의 시간복잡도와 같습니다.</li>
 <li><code>O(n!)</code>: 최악의 케이스입니다. 이렇게 코딩이 될 경우에는 답이 없습니다.</li>
 </ul>
-<p><img src="Images/big-o.png" alt="Big-o"></p>
+<p><img src="/images/big-o.png" alt="Big-o"></p>
 <h2 id="Common-iOS-Data-Structures"><a href="#Common-iOS-Data-Structures" class="headerlink" title="Common iOS Data Structures"></a>Common iOS Data Structures</h2><p><code>Array</code>, <code>Dictionaries</code>, <code>Sets</code> 가 가장 흔한 데이터 구조입니다. 각각의 구조와 성능에 대해 알아봅니다. 또한 <code>Objectice-C</code>와<code>Swift</code>에서 각각의 데이터구조를 비교해봅니다.</p>
 <h3 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h3><ul>
 <li><code>Array</code>는 순서를 가지고 있는 배열입니다. <code>index</code>를 통해서 각각의 아이템에 접근 할 수 있습니다. 인덱스를 가지고 아이템을 가져오는 것을 <code>subscripting</code>이라고 합니다.</li>
@@ -143,33 +143,6 @@
     
     
       <category term="Swift" scheme="http://younatics.github.io/tags/Swift/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://younatics.github.io/2017/06/01/hello-world/"/>
-    <id>http://younatics.github.io/2017/06/01/hello-world/</id>
-    <published>2017-06-01T07:13:08.000Z</published>
-    <updated>2017-06-01T07:13:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
     
   </entry>
   
