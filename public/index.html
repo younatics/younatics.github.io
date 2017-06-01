@@ -9,11 +9,14 @@
     <title>younatics</title>
     <meta name="author" content="Seungyoun Yi">
     
+        <meta name="keywords" content="Swift,ReactNative,">
+    
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta property="og:type" content="blog">
+    <meta name="keywords" content="Swift,ReactNative">
+<meta property="og:type" content="blog">
 <meta property="og:title" content="younatics">
 <meta property="og:url" content="http://younatics.github.io/index.html">
 <meta property="og:site_name" content="younatics">
@@ -81,7 +84,7 @@
                 </a>
                 <h4 class="sidebar-profile-name">Seungyoun Yi</h4>
                 
-                    <h5 class="sidebar-profile-bio"><p>author.bio</p>
+                    <h5 class="sidebar-profile-bio"><p>Mobile Developer</p>
 </h5>
                 
             </div>
@@ -104,12 +107,12 @@
                 <li class="sidebar-button">
                     
                         <a  class="sidebar-button-link "
-                             href="/Swift"
+                             href="/all-categories"
                             
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                        <span class="sidebar-button-desc">Swift</span>
+                        <span class="sidebar-button-desc">Categories</span>
                     </a>
             </li>
             
@@ -134,18 +137,6 @@
                     
                         <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
                         <span class="sidebar-button-desc">Archives</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link open-algolia-search"
-                             href="#search"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                        <span class="sidebar-button-desc">Search</span>
                     </a>
             </li>
             
@@ -295,7 +286,7 @@
 <li><code>O(2^n)</code>: 2의 데이터 구조의 갯수 제곱만큼 증가합니다. 매우 나쁜 퍼포먼스를 보여줍니다. 원소 n개 집합의 모든 부분집합을 출력하는 경우의 시간복잡도와 같습니다.</li>
 <li><code>O(n!)</code>: 최악의 케이스입니다. 이렇게 코딩이 될 경우에는 답이 없습니다.</li>
 </ul>
-<p><img src="Images/big-o.png" alt="Big-o"></p>
+<p><img src="/images/big-o.png" alt="Big-o"></p>
 <h2 id="Common-iOS-Data-Structures"><a href="#Common-iOS-Data-Structures" class="headerlink" title="Common iOS Data Structures"></a>Common iOS Data Structures</h2><p><code>Array</code>, <code>Dictionaries</code>, <code>Sets</code> 가 가장 흔한 데이터 구조입니다. 각각의 구조와 성능에 대해 알아봅니다. 또한 <code>Objectice-C</code>와<code>Swift</code>에서 각각의 데이터구조를 비교해봅니다.</p>
 <h3 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h3><ul>
 <li><code>Array</code>는 순서를 가지고 있는 배열입니다. <code>index</code>를 통해서 각각의 아이템에 접근 할 수 있습니다. 인덱스를 가지고 아이템을 가져오는 것을 <code>subscripting</code>이라고 합니다.</li>
@@ -400,55 +391,12 @@
             
         </div>
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/06/01/hello-world/">
-                            Hello World
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-06-01T16:13:08+09:00">
-	
-		    Jun 01, 2017
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/06/01/hello-world/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
+            <a href="/2017/06/01/swift-data-structure-kr/">
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://younatics.github.io/2017/06/01/swift-data-structure-kr/big-o.png"/>
                 </div>
+            </a>
             
-        </div>
         
     </article>
     
@@ -489,14 +437,14 @@
         
             <h4 id="about-card-name">Seungyoun Yi</h4>
         
-            <div id="about-card-bio"><p>author.bio</p>
+            <div id="about-card-bio"><p>Mobile Developer</p>
 </div>
         
         
             <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p>ZIGBANG</p>
 
             </div>
         
@@ -531,24 +479,11 @@
                 
                 <div class="media">
                     
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://younatics.github.io/2017/06/01/hello-world/">
-                            <h3 class="media-heading">Hello World</h3>
+                    <div class="media-left">
+                        <a class="link-unstyled" href="http://younatics.github.io/2017/06/01/swift-data-structure-kr/">
+                            <img class="media-image" src="http://younatics.github.io/2017/06/01/swift-data-structure-kr/big-o.png" width="90" height="90"/>
                         </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    Jun 1, 2017
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
                     </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="http://younatics.github.io/2017/06/01/swift-data-structure-kr/">
@@ -574,7 +509,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                2 posts found
+                1 post found
             </p>
         </div>
     </div>

@@ -35,9 +35,9 @@ sidebar:
             title: global.home
             url: /
             icon: home
-        Swift:
-            title: Swift
-            url: /Swift
+        category:
+            title: global.categories
+            url: /all-categories
             icon: bookmark
         tags:
             title: global.tags
@@ -47,12 +47,12 @@ sidebar:
             title: global.archives
             url: /all-archives
             icon: archive
-        search:
-            title: global.search
-            url: /#search
-            icon: search
-            # `open-algolia-search` classes are used to open algolia search modal
-            class: open-algolia-search
+        # search:
+        #     title: global.search
+        #     url: /#search
+        #     icon: search
+        #     # `open-algolia-search` classes are used to open algolia search modal
+        #     class: open-algolia-search
         # about:
         #     title: global.about
         #     url: /#about

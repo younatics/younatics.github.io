@@ -5,6 +5,9 @@ tags:
 - Swift
 categories:
 - Swift
+thumbnailImagePosition: right
+thumbnailImage: big-o.png
+
 ---
 Collection Data 스위프트 구조를 소개합니다.좋은 글이라 생각되어 번역합니다. 핵심적인 부분을 제외하고는 번역을 제외하고 의역했습니다. 본문은 [여기](https://www.raywenderlich.com/123100/collection-data-structures-swift-2)를 참고해주세요.
 
@@ -31,7 +34,7 @@ Big-O 표기법은 이 때 필요한 시간, 공간을 * 점근적으로(asympto
 - `O(2^n)`: 2의 데이터 구조의 갯수 제곱만큼 증가합니다. 매우 나쁜 퍼포먼스를 보여줍니다. 원소 n개 집합의 모든 부분집합을 출력하는 경우의 시간복잡도와 같습니다.
 - `O(n!)`: 최악의 케이스입니다. 이렇게 코딩이 될 경우에는 답이 없습니다.
 
-![Big-o](Images/big-o.png)
+![Big-o](/images/big-o.png)
 
 ## Common iOS Data Structures
 `Array`, `Dictionaries`, `Sets` 가 가장 흔한 데이터 구조입니다. 각각의 구조와 성능에 대해 알아봅니다. 또한 `Objectice-C`와`Swift`에서 각각의 데이터구조를 비교해봅니다.
