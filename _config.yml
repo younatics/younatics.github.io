@@ -7,7 +7,7 @@ title: younatics
 subtitle:
 description:
 author: Seungyoun Yi
-language:
+language: en
 timezone:
 
 # URL
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: tranquilpeak
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
