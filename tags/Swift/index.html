@@ -262,13 +262,13 @@
 <li><code>O(1)</code>: 제일 이상적입니다. 처리하는 데이터의 양(n)에 관계 없이 상수 시간만큼 소요되는 경우입니다.</li>
 <li><code>O(log n)</code>: 좋은 퍼포먼스를 보여주는 그래프입니다. 데이터 구조에 있는 아이템이 늘어나도 매우 천천히 연산의 횟수가 늘어나게(=걸리는 시간도) 됩니다.</li>
 <li><code>O(n)</code>: 중간 단계의 퍼포먼스를 보여주는 그래프입니다. 데이터 구조랑 연산횟수가 일차함수(linear)를 그리며 증가합니다.</li>
-<li><code>O(n (log n))</code>: (데이터가 10M~100M 넘어갈 경우) 낮은 단계의 퍼포먼스를 보여주는 그래프입니다. 비교 기반의 정렬(comparison based sort)의 시간복잡도 하한(lower bound)이기도 합니다.</li>
+<li><code>O(n (log n))</code>: (데이터가 10M~100M 넘어갈 경우) 낮은 단계의 퍼포먼스를 보여주는 그래프입니다. 비교 기반 정렬(comparison based sort)의 시간복잡도 하한(lower bound)이기도 합니다.</li>
 <li><code>O(n²)</code>: 데이터구조에 있는 아이템수의 제곱에 비례하여 늘어납니다. 여기서 부턴 성능이 매우 떨어지고, 추천하지 않습니다.</li>
 <li><code>O(2^n)</code>: 2의 데이터 구조의 갯수 제곱만큼 증가합니다. 매우 나쁜 퍼포먼스를 보여줍니다. 원소 n개 집합의 모든 부분집합을 출력하는 경우의 시간복잡도와 같습니다.</li>
 <li><code>O(n!)</code>: 최악의 케이스입니다. 이렇게 코딩이 될 경우에는 답이 없습니다.</li>
 </ul>
 <p><img src="/images/big-o.png" alt="Big-o"></p>
-<h2 id="Common-iOS-Data-Structures"><a href="#Common-iOS-Data-Structures" class="headerlink" title="Common iOS Data Structures"></a>Common iOS Data Structures</h2><p><code>Array</code>, <code>Dictionaries</code>, <code>Sets</code> 가 가장 흔한 데이터 구조입니다. 각각의 구조와 성능에 대해 알아봅니다. 또한 <code>Objectice-C</code>와<code>Swift</code>에서 각각의 데이터구조를 비교해봅니다.</p>
+<h2 id="Common-iOS-Data-Structures"><a href="#Common-iOS-Data-Structures" class="headerlink" title="Common iOS Data Structures"></a>Common iOS Data Structures</h2><p><code>Arrays</code>, <code>Dictionaries</code>, <code>Sets</code> 가 가장 흔한 데이터 구조입니다. 각각의 구조와 성능에 대해 알아봅니다. 또한 <code>Objective-C</code>와<code>Swift</code>에서 각각의 데이터구조를 비교해봅니다.</p>
 <h3 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h3><ul>
 <li><code>Array</code>는 순서를 가지고 있는 배열입니다. <code>index</code>를 통해서 각각의 아이템에 접근 할 수 있습니다. 인덱스를 가지고 아이템을 가져오는 것을 <code>subscripting</code>이라고 합니다.</li>
 <li><code>Objective-C</code>의 <code>NSArray</code>는 <code>Swift</code>에서 <code>let</code>으로 선언된 <code>Array</code>와 같습니다. <code>NSMutableArray</code>는 <code>var</code>로 선언된 <code>Array</code>와 같습니다.</li>
@@ -291,9 +291,9 @@
 <li>Removing objects is faster in a Swift <code>Array</code> than a <code>NSArray</code>. From the beginning, middle or end, removing an object degrades between <code>O(log n)</code> and <code>O(n)</code>. Raw time is better in <code>Swift</code> when you remove from the beginning of an Array, but the distinction is a matter of milliseconds.</li>
 <li>Looking up items in <code>Swift</code> is faster for the first time since its inception. Look ups by index grow at very close rates for both Swift <code>Arrays</code> and <code>NSArray</code> while lookup by object is roughly 80 times faster in Swift.</li>
 </ul>
-<p>상기 글은 스위프트가 얼마나 최적화가 잘 되었냐는 글입니다. <code>Swift</code>쓰세요. 두번 쓰세요.</p>
+<p>상기 글은 스위프트가 얼마나 잘 최적화 되었는지 보여줍니다. <code>Swift</code>쓰세요. 두번 쓰세요.</p>
 <h3 id="Dictionaries"><a href="#Dictionaries" class="headerlink" title="Dictionaries"></a>Dictionaries</h3><ul>
-<li>Dictionary(사전)은 특정 순서와 상관없이 <code>key</code>값을 통해서 값을 찾을 수 있는 데이터 구조입니다.</li>
+<li>Dictionary(사전)는 특정 순서와 상관없이 <code>key</code>값을 통해서 값을 찾을 수 있는 데이터 구조입니다.</li>
 <li>Dictionary는 <code>subscripting</code>을 지원하기 떄문에, <code>dictionary[&quot;hello&quot;]</code> 와 같은 방법으로 <code>hello</code>라는 <code>key</code>값을 통해서 값에 접근 할 수 있습니다.</li>
 <li><code>NSDictionary</code>와 <code>NSMutableDictionary</code>의 차이는 <code>Array</code>일 경우와 같습니다.</li>
 <li><code>Swift</code>의 Dictionary는 타입을 지정해줘야 합니다. (<code>NSDictionary</code>가 <code>NSObject</code>를 갖는 것 처럼)</li>
@@ -317,7 +317,7 @@
 <li><code>Objective-c</code> 에서는 각각 <code>NSSet</code>과 <code>NSMutableSet</code>이 있습니다.</li>
 </ul>
 <h5 id="이럴때-쓰면-좋습니다-2"><a href="#이럴때-쓰면-좋습니다-2" class="headerlink" title="이럴때 쓰면 좋습니다."></a>이럴때 쓰면 좋습니다.</h5><ul>
-<li>Set은 중복없이 유니크한 값을 중복없이 뽑을 경우 좋습니다.</li>
+<li>Set은 유니크한 값을 중복없이 뽑을 경우 좋습니다.</li>
 <li><code>Snippet</code>을 하나 보겠습니다.<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> names = [<span class="string">"John"</span>, <span class="string">"Paul"</span>, <span class="string">"George"</span>, <span class="string">"Ringo"</span>, <span class="string">"Mick"</span>, <span class="string">"Keith"</span>, <span class="string">"Charlie"</span>, <span class="string">"Ronnie"</span>]</div><div class="line"><span class="keyword">var</span> stringSet = <span class="type">Set</span>&lt;<span class="type">String</span>&gt;() <span class="comment">// 1</span></div><div class="line"><span class="keyword">var</span> loopsCount = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> stringSet.<span class="built_in">count</span> &lt; <span class="number">4</span> &#123;</div><div class="line">    <span class="keyword">let</span> randomNumber = arc4random_uniform(<span class="type">UInt32</span>(names.<span class="built_in">count</span>)) <span class="comment">// 2</span></div><div class="line">    <span class="keyword">let</span> randomName = names[<span class="type">Int</span>(randomNumber)] <span class="comment">// 3</span></div><div class="line">    <span class="built_in">print</span>(randomName) <span class="comment">// 4</span></div><div class="line">    stringSet.insert(randomName) <span class="comment">// 5</span></div><div class="line">    loopsCount += <span class="number">1</span> <span class="comment">// 6</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 7</span></div><div class="line"><span class="built_in">print</span>(<span class="string">"Loops: "</span> + loopsCount.description + <span class="string">", Set contents: "</span> + stringSet.description)</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -326,7 +326,7 @@
 <li>아이템를 랜덤으로 뽑습니다</li>
 <li>인덱스에 있는 아이를 가져옵니다</li>
 <li>로그를 남깁니다</li>
-<li><code>mutable set</code>에 값을 저장힙낟. 만약 값이 저장되어 있는 경우에는 값을 저장하지 않습니다.</li>
+<li><code>mutable set</code>에 값을 저장합니다. 만약 값이 저장되어 있는 경우에는 값을 저장하지 않습니다.</li>
 <li>루프 카우트를 늘려서 루프를 다 돌게 합니다</li>
 <li>루프가 끝나면 값을 로그에 남깁니다</li>
 </ol>
@@ -340,7 +340,7 @@
 </li>
 </ul>
 <h3 id="NSCountedSet"><a href="#NSCountedSet" class="headerlink" title="NSCountedSet"></a>NSCountedSet</h3><ul>
-<li><code>NSMutableSet</code>를 상속받아서 만들어진 데이터 구조로, 얼마나 많은 오브젝트가 <code>mutable set</code>에 더해해졌는지 알 수 있게 해줍니다.</li>
+<li><code>NSMutableSet</code>을 상속받아서 만들어진 데이터 구조로, 얼마나 많은 오브젝트가 <code>mutable set</code>에 더해해졌는지 알 수 있게 해줍니다.</li>
 <li>하단 코드를 참고해주세요</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> countedMutable = <span class="type">NSCountedSet</span>()</div><div class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names &#123;</div><div class="line">    countedMutable.add(name)</div><div class="line">    countedMutable.add(name)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> ringos = countedMutable.<span class="built_in">count</span>(<span class="keyword">for</span>: <span class="string">"Ringo"</span>)</div><div class="line"><span class="built_in">print</span>(<span class="string">"Counted Mutable set: <span class="subst">\(countedMutable)</span>) with count for Ringo: <span class="subst">\(ringos)</span>"</span>)</div><div class="line"></div><div class="line"><span class="type">Counted</span> <span class="type">Mutable</span> <span class="keyword">set</span>: &#123;(</div><div class="line">    <span class="type">George</span>,</div><div class="line">    <span class="type">John</span>,</div><div class="line">    <span class="type">Ronnie</span>,</div><div class="line">    <span class="type">Mick</span>,</div><div class="line">    <span class="type">Keith</span>,</div><div class="line">    <span class="type">Charlie</span>,</div><div class="line">    <span class="type">Paul</span>,</div><div class="line">    <span class="type">Ringo</span></div><div class="line">)&#125;) with <span class="built_in">count</span> <span class="keyword">for</span> <span class="type">Ringo</span>: <span class="number">2</span></div></pre></td></tr></table></figure>
