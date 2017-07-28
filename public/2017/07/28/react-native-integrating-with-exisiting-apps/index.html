@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="younatics">
+    <title>react-native-integrating-with-exisiting-apps - younatics</title>
+    <meta name="author" content="Seungyoun Yi">
+    
+        <meta name="keywords" content="Swift,ReactNative,">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="React Native [0.45.1] Intergrating with existing appsPurposeThis repository is made for React Natvie users who want to integrate RN[0.45.1] to exisiting application using Swift3, Obbjective-C, JAVA, K">
+<meta name="keywords" content="ReactNative">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="react-native-integrating-with-exisiting-apps">
+<meta property="og:url" content="http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/index.html">
+<meta property="og:site_name" content="younatics">
+<meta property="og:description" content="React Native [0.45.1] Intergrating with existing appsPurposeThis repository is made for React Natvie users who want to integrate RN[0.45.1] to exisiting application using Swift3, Obbjective-C, JAVA, K">
+<meta property="og:updated_time" content="2017-07-28T01:42:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native-integrating-with-exisiting-apps">
+<meta name="twitter:description" content="React Native [0.45.1] Intergrating with existing appsPurposeThis repository is made for React Natvie users who want to integrate RN[0.45.1] to exisiting application using Swift3, Obbjective-C, JAVA, K">
+<meta name="twitter:creator" content="@younatics">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://avatars2.githubusercontent.com/u/6335975?v=3&amp;s=460"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-sxklfps8ywgfyyjcowvnb4gxdgt0zjts3hsguljmv9uqanxjbnitrovtbrek.min.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">younatics</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://avatars2.githubusercontent.com/u/6335975?v=3&amp;s=460" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://avatars2.githubusercontent.com/u/6335975?v=3&amp;s=460" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Seungyoun Yi</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>Mobile Developer</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/younatics" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://stackoverflow.com/users/4667713/seungyoun-yi" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://twitter.com/younatics" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://facebook.com/younaticss" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.linkedin.com/in/seungyoun-yi-9a5885b3/" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            react-native-integrating-with-exisiting-apps
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-07-28T10:40:47+09:00">
+	
+		    Jul 28, 2017
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/ReactNative/">ReactNative</a>
+
+
+    
+</div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h1 id="React-Native-0-45-1-Intergrating-with-existing-apps"><a href="#React-Native-0-45-1-Intergrating-with-existing-apps" class="headerlink" title="React Native [0.45.1] Intergrating with existing apps"></a>React Native [0.45.1] Intergrating with existing apps</h1><h2 id="Purpose"><a href="#Purpose" class="headerlink" title="Purpose"></a>Purpose</h2><p>This repository is made for React Natvie users who want to integrate RN[0.45.1] to exisiting application using Swift3, Obbjective-C, JAVA, Kotlin. <a href="http://facebook.github.io/react-native/releases/next/docs/integration-with-existing-apps.html#integration-with-existing-apps" target="_blank" rel="external">Integration with existing apps</a> is well documented, but I want to make it more easily. This document is tested recently. Feel free to make Pull Request.<br>Thanks.</p>
+<h2 id="Develop-Enviroment"><a href="#Develop-Enviroment" class="headerlink" title="Develop Enviroment"></a>Develop Enviroment</h2><p>This document is based on below version. React Native currenly changes a lot, so be careful.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"dependencies"</span>: &#123;</div><div class="line">		<span class="string">"react"</span>: <span class="string">"16.0.0-alpha.12"</span>,</div><div class="line">		<span class="string">"react-native"</span>: <span class="string">"0.45.1"</span></div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>If you have <code>iOS</code> and <code>Android</code> application independently, this will be perfect guide for you. Please follow these steps.</p>
+<h2 id="Getting-started"><a href="#Getting-started" class="headerlink" title="Getting started"></a>Getting started</h2><h3 id="Step-1-Install-tools-and-init-project"><a href="#Step-1-Install-tools-and-init-project" class="headerlink" title="Step 1. Install tools and init project"></a>Step 1. Install tools and init project</h3><h4 id="Install-tools"><a href="#Install-tools" class="headerlink" title="Install tools"></a>Install tools</h4><p>you can also see this in <a href="http://facebook.github.io/react-native/releases/next/docs/getting-started.html" target="_blank" rel="external">Getting Started</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">brew install node</div><div class="line">brew install watchman</div><div class="line">npm install -g react-native-cli</div></pre></td></tr></table></figure></p>
+<p>If you all done this process, init your project.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native init ReactProject</div></pre></td></tr></table></figure></p>
+<p>In your <code>ReactProject</code> directory, you can find <code>package.json</code>. this should be look like this.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="string">"name"</span>: <span class="string">"ReactProject"</span>,</div><div class="line">	<span class="string">"version"</span>: <span class="string">"0.0.1"</span>,</div><div class="line">	<span class="string">"private"</span>: <span class="literal">true</span>,</div><div class="line">	<span class="string">"scripts"</span>: &#123;</div><div class="line">		<span class="string">"start"</span>: <span class="string">"node node_modules/react-native/local-cli/cli.js start"</span>,</div><div class="line">		<span class="string">"test"</span>: <span class="string">"jest"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"dependencies"</span>: &#123;</div><div class="line">		<span class="string">"react"</span>: <span class="string">"16.0.0-alpha.6"</span>,</div><div class="line">		<span class="string">"react-native"</span>: <span class="string">"0.44.0"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"devDependencies"</span>: &#123;</div><div class="line">		<span class="string">"babel-jest"</span>: <span class="string">"20.0.3"</span>,</div><div class="line">		<span class="string">"babel-preset-react-native"</span>: <span class="string">"1.9.2"</span>,</div><div class="line">		<span class="string">"jest"</span>: <span class="string">"20.0.4"</span>,</div><div class="line">		<span class="string">"react-test-renderer"</span>: <span class="string">"16.0.0-alpha.6"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"jest"</span>: &#123;</div><div class="line">		<span class="string">"preset"</span>: <span class="string">"react-native"</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>you can’t use <code>expo</code> when you integrate with exisiting apps.</p>
+</blockquote>
+<hr>
+<h3 id="Step-2-Add-postinstall-in-package-json"><a href="#Step-2-Add-postinstall-in-package-json" class="headerlink" title="Step 2. Add postinstall in package.json"></a>Step 2. Add postinstall in package.json</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="string">"name"</span>: <span class="string">"ReactProject"</span>,</div><div class="line">	<span class="string">"version"</span>: <span class="string">"0.0.1"</span>,</div><div class="line">	<span class="string">"private"</span>: <span class="literal">true</span>,</div><div class="line">	<span class="string">"scripts"</span>: &#123;</div><div class="line">		<span class="string">"postinstall"</span>: <span class="string">"sed -i '' 's/#import &lt;RCTAnimation\\/RCTValueAnimatedNode.h&gt;/#import \"RCTValueAnimatedNode.h\"/' ./node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedNodesManager.h"</span>,</div><div class="line">		<span class="string">"start"</span>: <span class="string">"node node_modules/react-native/local-cli/cli.js start"</span>,</div><div class="line">		<span class="string">"test"</span>: <span class="string">"jest"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"dependencies"</span>: &#123;</div><div class="line">		<span class="string">"react"</span>: <span class="string">"16.0.0-alpha.12"</span>,</div><div class="line">		<span class="string">"react-native"</span>: <span class="string">"0.45.1"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"devDependencies"</span>: &#123;</div><div class="line">		<span class="string">"babel-jest"</span>: <span class="string">"20.0.3"</span>,</div><div class="line">		<span class="string">"babel-preset-react-native"</span>: <span class="string">"2.0.0"</span>,</div><div class="line">		<span class="string">"jest"</span>: <span class="string">"20.0.4"</span>,</div><div class="line">		<span class="string">"react-test-renderer"</span>: <span class="string">"16.0.0-alpha.12"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"jest"</span>: &#123;</div><div class="line">		<span class="string">"preset"</span>: <span class="string">"react-native"</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Currently, RN 0.45.1 have a problem in <code>iOS - #import &lt;RCTAnimation\\/RCTValueAnimatedNode.h&gt;</code>. You need to change it to <code>#import &quot;RCTValueAnimatedNode.h</code>. So use <code>postinstall</code></p>
+<hr>
+<h3 id="Step-3-Git-clone-your-iOS-and-Android-Project"><a href="#Step-3-Git-clone-your-iOS-and-Android-Project" class="headerlink" title="Step 3. Git clone your iOS and Android Project"></a>Step 3. Git clone your iOS and Android Project</h3><p>Main purpose of this step is to make structure for cofiguration management. You can just copy and paste to <code>/android</code> directory and <code>/iOS</code> directory. or <code>git clone</code> to make below srtucture.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[React native repository] </div><div class="line">|</div><div class="line">|- /android [Android repository]</div><div class="line">|- /ios [iOS repository]</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="Step4-Modify-iOS-project"><a href="#Step4-Modify-iOS-project" class="headerlink" title="Step4. Modify iOS project"></a>Step4. Modify iOS project</h3><p>You can do easily beacuse iOS depedency tool is <code>cocoapods</code>. Add libraries in <code>Podfile</code> and <code>pod install</code><br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#React Native</span></div><div class="line">pod <span class="string">'React'</span>, <span class="symbol">:path</span> =&gt; <span class="string">'../node_modules/react-native'</span>, <span class="symbol">:subspecs</span> =&gt; [</div><div class="line">	<span class="string">'Core'</span>,</div><div class="line">	<span class="string">'RCTText'</span>,</div><div class="line">	<span class="string">'RCTNetwork'</span>,</div><div class="line">	<span class="string">'RCTImage'</span>,</div><div class="line">	<span class="string">'RCTWebSocket'</span>,</div><div class="line">	<span class="string">'DevSupport'</span>,</div><div class="line">	<span class="string">'BatchedBridge'</span>,</div><div class="line">	<span class="string">'RCTAnimation'</span></div><div class="line">]</div><div class="line">pod <span class="string">'Yoga'</span>, <span class="symbol">:path</span> =&gt; <span class="string">'../node_modules/react-native/ReactCommon/yoga'</span></div></pre></td></tr></table></figure></p>
+<p>Make <code>UIViewController</code> to present <code>React Native view</code><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> UIKit</div><div class="line"><span class="keyword">import</span> React</div><div class="line"><span class="keyword">import</span> SnapKit</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReactViewController</span>: <span class="title">UIViewController</span>, <span class="title">ZBAnSimPopupDelegate</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> reactView: <span class="type">RCTRootView</span>!</div><div class="line">	<span class="keyword">var</span> item_id: <span class="type">Int</span>?</div><div class="line"></div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">loadView</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">super</span>.loadView()</div><div class="line">        </div><div class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> id = item_id <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</div><div class="line">        <span class="keyword">let</span> mockData = [<span class="string">"item_id"</span>: <span class="string">"\(id)"</span>]</div><div class="line">        </div><div class="line">        <span class="keyword">self</span>.reactView = <span class="type">ReactBridge</span>.shared.viewForModule(<span class="string">"ReactProject"</span>, initialProperties: mockData)</div><div class="line">        <span class="keyword">self</span>.view.addSubview(<span class="keyword">self</span>.reactView)</div><div class="line">        </div><div class="line">        <span class="keyword">self</span>.reactView.snp.makeConstraints &#123; (m) <span class="keyword">in</span></div><div class="line">            m.edges.equalTo(<span class="keyword">self</span>.view)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Add <code>React Bridge</code> to communicate with <code>index.ios.js</code> &lt;-&gt; <code>UIViewController</code>. <code>forHotReloading</code> flag is for compile bundle or localhost.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> localUrl = <span class="string">"http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true"</span></div><div class="line"><span class="keyword">let</span> forHotReloading = <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReactBridge</span>: <span class="title">NSObject</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">let</span> shared = <span class="type">ReactBridge</span>()</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ReactBridge</span>: <span class="title">RCTBridgeDelegate</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sourceURL</span><span class="params">(<span class="keyword">for</span> bridge: RCTBridge!)</span></span> -&gt; <span class="type">URL</span>! &#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">URL</span>(string: localUrl)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">createBridgeIfNeeded</span><span class="params">()</span></span> -&gt; <span class="type">RCTBridge</span> &#123;</div><div class="line">        <span class="keyword">let</span> bridge = <span class="type">RCTBridge</span>.<span class="keyword">init</span>(delegate: <span class="keyword">self</span>, launchOptions: <span class="literal">nil</span>)</div><div class="line">        <span class="keyword">return</span> bridge ?? <span class="type">RCTBridge</span>()</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">viewForModule</span><span class="params">(<span class="number">_</span> moduleName: String, initialProperties: [String : Any]?)</span></span> -&gt; <span class="type">RCTRootView</span> &#123;</div><div class="line">        <span class="keyword">if</span> forHotReloading &#123;</div><div class="line">            <span class="keyword">let</span> viewBridge = createBridgeIfNeeded()</div><div class="line">            <span class="keyword">let</span> rootView: <span class="type">RCTRootView</span> = <span class="type">RCTRootView</span>(</div><div class="line">                bridge: viewBridge,</div><div class="line">                moduleName: moduleName,</div><div class="line">                initialProperties: initialProperties)</div><div class="line">            <span class="keyword">return</span> rootView</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">if</span> <span class="keyword">let</span> iosBundle = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"main"</span>, withExtension: <span class="string">"jsbundle"</span>) &#123;</div><div class="line">                <span class="keyword">guard</span> <span class="keyword">let</span> bundleRootView = <span class="type">RCTRootView</span>(bundleURL: iosBundle, moduleName: moduleName, initialProperties: initialProperties, launchOptions: <span class="literal">nil</span>) <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="type">RCTRootView</span>() &#125;</div><div class="line">                <span class="keyword">return</span> bundleRootView</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="type">RCTRootView</span>()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Add <code>ReactManager.swift</code> to call method with <code>Native</code> &lt;-&gt; <code>React-Native</code><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@objc</span>(<span class="type">ReactManager</span>) <span class="class"><span class="keyword">class</span> <span class="title">ReactManager</span>: <span class="title">NSObject</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> bridge: <span class="type">RCTBridge</span>!</div><div class="line">    </div><div class="line">    <span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">back</span><span class="params">(<span class="number">_</span> reactTag: NSNumber)</span></span> &#123;</div><div class="line">        <span class="type">DispatchQueue</span>.main.async &#123;</div><div class="line">            <span class="keyword">if</span> <span class="keyword">let</span> view = <span class="keyword">self</span>.bridge.uiManager.view(forReactTag: reactTag) &#123;</div><div class="line">                <span class="keyword">let</span> presentedViewController = view.reactViewController()</div><div class="line">                presentedViewController?.navigationController?.pop(animated: <span class="literal">true</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>We need addtional <code>Objective-C file</code> beacuse <code>React</code> use macro. Add <code>ReactManagerBridge.m</code> file like this<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#<span class="keyword">import</span> "ReactManagerBridge.h"</div><div class="line">#<span class="keyword">import</span> "zigbang-Swift.h"</div><div class="line"></div><div class="line">@implementation <span class="type">ReactManagerBridge</span></div><div class="line"></div><div class="line"><span class="type">RCT_EXPORT_MODULE</span>(<span class="type">ReactManager</span>);</div><div class="line"></div><div class="line"><span class="type">RCT_EXPORT_METHOD</span>(back:(nonnull <span class="type">NSNumber</span> *)reactTag) &#123;</div><div class="line">    <span class="type">ReactManager</span>* reactManager = [[<span class="type">ReactManager</span> alloc] <span class="keyword">init</span>];</div><div class="line">    reactManager.bridge = _bridge;</div><div class="line">    [reactManager back:reactTag];</div><div class="line"></div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="Step4-Modify-Android-project"><a href="#Step4-Modify-Android-project" class="headerlink" title="Step4. Modify Android project"></a>Step4. Modify Android project</h3><p>add dependency in <code>build.gradle</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        mavenLocal()</div><div class="line">        jcenter()</div><div class="line">        maven &#123;</div><div class="line">            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm</div><div class="line">            url &quot;$rootDir/../node_modules/react-native/android&quot;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>in your <code>app.gradle</code>. I added <code>exclude</code> becuase it conflict with  exisiting dependecies</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">compile (&quot;com.facebook.react:react-native:+&quot;) &#123;</div><div class="line">    exclude group:&apos;com.facebook.stetho&apos;, module:&apos;stetho&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Add <code>ReactInstanceManager</code> to use it in <code>React Native</code>. I recommand to make instance in <code>Mainapplication</code> becuase it takes some time to generate instance</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> ReactInstanceManager react;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">this</span>.react = ReactInstanceManager.builder()</div><div class="line">               .setApplication(<span class="keyword">this</span>)</div><div class="line">               .setBundleAssetName(<span class="string">"index.android.bundle"</span>)</div><div class="line">               .setJSMainModuleName(<span class="string">"index.android"</span>)</div><div class="line">               .addPackage(<span class="keyword">new</span> MainReactPackage())</div><div class="line">               .addPackage(<span class="keyword">new</span> ReactManagerBridge())</div><div class="line">               .setUseDeveloperSupport(BuildConfig.DEBUG)</div><div class="line">               .setInitialLifecycleState(LifecycleState.RESUMED)</div><div class="line">               .build();</div></pre></td></tr></table></figure>
+<p>Modify your <code>ReactRootView</code> where you want to use. Also add props to pass parameter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   <span class="meta">@BindView</span>(R.id.container)</div><div class="line">   ReactRootView container;</div><div class="line">   </div><div class="line">react = MainApplication.react;</div><div class="line"></div><div class="line">Bundle props = <span class="keyword">new</span> Bundle();</div><div class="line">props.putString(<span class="string">"items"</span>, <span class="keyword">new</span> Gson().toJson(response));</div><div class="line">container.startReactApplication(react, <span class="string">"ReactProject"</span>, props);</div></pre></td></tr></table></figure></p>
+<p>Add bridge to communicate with Native</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class ReactManagerBridge() : ReactPackage &#123;</div><div class="line"></div><div class="line">    override fun createJSModules(): List&lt;Class&lt;out JavaScriptModule&gt;&gt; &#123;</div><div class="line">        return emptyList()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    override fun createViewManagers(reactContext: ReactApplicationContext): List&lt;ViewManager&lt;*, *&gt;&gt; &#123;</div><div class="line">        val modules = ArrayList&lt;ViewManager&lt;*, *&gt;&gt;()</div><div class="line">        return modules</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    override fun createNativeModules(reactContext: ReactApplicationContext): List&lt;NativeModule&gt; &#123;</div><div class="line">        val modules = ArrayList&lt;NativeModule&gt;()</div><div class="line"></div><div class="line">        modules.add(ReactManager(reactContext))</div><div class="line">        return modules</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Add reactmanager to call method</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">class ReactManager(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) &#123;</div><div class="line"></div><div class="line">    fun ReactManager(reactContext: ReactApplicationContext) &#123;</div><div class="line">        super.getReactApplicationContext()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    override fun getName(): String &#123;</div><div class="line">        return "ReactManager"</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @ReactMethod</div><div class="line">    fun alert(message: String) &#123;</div><div class="line">        Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>This is all about setting your react native to exisiting application!</p>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/ReactNative/">ReactNative</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/01/swift-data-structure-kr/" data-tooltip="Collection Data Structures Swift - KR">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 Seungyoun Yi. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/01/swift-data-structure-kr/" data-tooltip="Collection Data Structures Swift - KR">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
+                    <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
+                    <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
+                    <i class="fa fa-google-plus"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://avatars2.githubusercontent.com/u/6335975?v=3&amp;s=460" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Seungyoun Yi</h4>
+        
+            <div id="about-card-bio"><p>Mobile Developer</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>ZIGBANG</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Seoul, Korea
+            </div>
+        
+    </div>
+</div>
+
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="http://younatics.github.io/2017/06/01/swift-data-structure-kr/">
+                            <img class="media-image" src="http://younatics.github.io/2017/06/01/swift-data-structure-kr/big-o.png" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://younatics.github.io/2017/06/01/swift-data-structure-kr/">
+                            <h3 class="media-heading">Collection Data Structures Swift - KR</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 1, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
+                            <h3 class="media-heading">react-native-integrating-with-exisiting-apps</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jul 28, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                2 posts found
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+    </body>
+</html>
