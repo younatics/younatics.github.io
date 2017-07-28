@@ -20,6 +20,7 @@
 <meta property="og:title" content="younatics">
 <meta property="og:url" content="http://younatics.github.io/archives/index.html">
 <meta property="og:site_name" content="younatics">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="younatics">
 <meta name="twitter:creator" content="@younatics">
@@ -278,9 +279,9 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> ReactInstanceManager react;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">this</span>.react = ReactInstanceManager.builder()</div><div class="line">               .setApplication(<span class="keyword">this</span>)</div><div class="line">               .setBundleAssetName(<span class="string">"index.android.bundle"</span>)</div><div class="line">               .setJSMainModuleName(<span class="string">"index.android"</span>)</div><div class="line">               .addPackage(<span class="keyword">new</span> MainReactPackage())</div><div class="line">               .addPackage(<span class="keyword">new</span> ReactManagerBridge())</div><div class="line">               .setUseDeveloperSupport(BuildConfig.DEBUG)</div><div class="line">               .setInitialLifecycleState(LifecycleState.RESUMED)</div><div class="line">               .build();</div></pre></td></tr></table></figure>
 <p>Modify your <code>ReactRootView</code> where you want to use. Also add props to pass parameter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   <span class="meta">@BindView</span>(R.id.container)</div><div class="line">   ReactRootView container;</div><div class="line">   </div><div class="line">react = MainApplication.react;</div><div class="line"></div><div class="line">Bundle props = <span class="keyword">new</span> Bundle();</div><div class="line">props.putString(<span class="string">"items"</span>, <span class="keyword">new</span> Gson().toJson(response));</div><div class="line">container.startReactApplication(react, <span class="string">"ReactProject"</span>, props);</div></pre></td></tr></table></figure></p>
 <p>Add bridge to communicate with Native</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class ReactManagerBridge() : ReactPackage &#123;</div><div class="line"></div><div class="line">    override fun createJSModules(): List&lt;Class&lt;out JavaScriptModule&gt;&gt; &#123;</div><div class="line">        return emptyList()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    override fun createViewManagers(reactContext: ReactApplicationContext): List&lt;ViewManager&lt;*, *&gt;&gt; &#123;</div><div class="line">        val modules = ArrayList&lt;ViewManager&lt;*, *&gt;&gt;()</div><div class="line">        return modules</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    override fun createNativeModules(reactContext: ReactApplicationContext): List&lt;NativeModule&gt; &#123;</div><div class="line">        val modules = ArrayList&lt;NativeModule&gt;()</div><div class="line"></div><div class="line">        modules.add(ReactManager(reactContext))</div><div class="line">        return modules</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class ReactManagerBridge() : ReactPackage &#123;</div><div class="line"></div><div class="line">    <span class="function">override fun <span class="title">createJSModules</span><span class="params">()</span>: List&lt;Class&lt;out JavaScriptModule&gt;&gt; </span>&#123;</div><div class="line">        <span class="keyword">return</span> emptyList()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function">override fun <span class="title">createViewManagers</span><span class="params">(reactContext: ReactApplicationContext)</span>: List&lt;ViewManager&lt;*, *&gt;&gt; </span>&#123;</div><div class="line">        val modules = ArrayList&lt;ViewManager&lt;*, *&gt;&gt;()</div><div class="line">        <span class="keyword">return</span> modules</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function">override fun <span class="title">createNativeModules</span><span class="params">(reactContext: ReactApplicationContext)</span>: List&lt;NativeModule&gt; </span>&#123;</div><div class="line">        val modules = ArrayList&lt;NativeModule&gt;()</div><div class="line"></div><div class="line">        modules.add(ReactManager(reactContext))</div><div class="line">        <span class="keyword">return</span> modules</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Add reactmanager to call method</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">class ReactManager(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) &#123;</div><div class="line"></div><div class="line">    fun ReactManager(reactContext: ReactApplicationContext) &#123;</div><div class="line">        super.getReactApplicationContext()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    override fun getName(): String &#123;</div><div class="line">        return "ReactManager"</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @ReactMethod</div><div class="line">    fun alert(message: String) &#123;</div><div class="line">        Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">class ReactManager(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) &#123;</div><div class="line"></div><div class="line">    <span class="function">fun <span class="title">ReactManager</span><span class="params">(reactContext: ReactApplicationContext)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.getReactApplicationContext()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function">override fun <span class="title">getName</span><span class="params">()</span>: String </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"ReactManager"</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ReactMethod</span></div><div class="line">    <span class="function">fun <span class="title">alert</span><span class="params">(message: String)</span> </span>&#123;</div><div class="line">        Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>This is all about setting your react native to exisiting application!</p>
 
                     
@@ -299,174 +300,18 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/06/01/swift-data-structure-kr/">
-                            Collection Data Structures Swift - KR
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-06-01T16:45:31+09:00">
-	
-		    Jun 01, 2017
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Swift/">Swift</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Collection Data 스위프트 구조를 소개합니다.좋은 글이라 생각되어 번역합니다. 핵심적인 부분을 제외하고는 번역을 제외하고 의역했습니다. 본문은 <a href="https://www.raywenderlich.com/123100/collection-data-structures-swift-2" target="_blank" rel="external">여기</a>를 참고해주세요.</p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>많은 데이터를 처리하는 어플리케이션을 만들고 있을 때를 생각해보세요. 언제 데이터를 넣고 어떻게 그 많은 데이터를 효율적으로 핸들링을 하실 건가요?<br>많은 데이터를 처리 할 경우에는 <code>Array</code>, <code>Dictionary</code>, <code>Sets</code> 에 대한 근본적인 개념을 알고 있는게 중요합니다. 이 <code>collection data structures</code> 에 명확한 개념을 가질 경우 처리 속도는 어마어마하게 빨라 질 것 입니다.</p>
-<h5 id="튜토리얼의-순서는-다음과-같습니다"><a href="#튜토리얼의-순서는-다음과-같습니다" class="headerlink" title="튜토리얼의 순서는 다음과 같습니다."></a>튜토리얼의 순서는 다음과 같습니다.</h5><ol>
-<li>데이터 구조에 대해 개념을 가지고, <code>Big-O</code>표기법에 대해 배워봅니다.</li>
-<li>여러가지 자료 구조들에 대해 숙지합니다.</li>
-<li>데이터 구조들의 퍼포먼스를 비교해봅니다.</li>
-<li>추가의 팁으로 다른 구조들을 조금 더 알아봅니다.</li>
-</ol>
-<h2 id="What-is-Big-O-Notation"><a href="#What-is-Big-O-Notation" class="headerlink" title="What is Big-O Notation?"></a>What is Big-O Notation?</h2><p>컴퓨터에서 데이터를 처리할 때 걸리는 <em> 시간 </em> 또는 차지하는 <em> 메모리 공간 </em> 은 일반적으로 <em> 데이터의 양 </em> 에 비례하게 됩니다.<br>Big-O 표기법은 이 때 필요한 시간, 공간을 <em> 점근적으로(asymptotically) </em> 표현하는 방법이며, 이렇게 표현한 것을 시간복잡도(time complexity), 공간복잡도(space complexity)라고 부릅니다.</p>
-<p>아래는 자주 만날 수 있는 시간복잡도의 Big-O 표기법과 설명을 빠른 것부터 나열한 것입니다.</p>
-<ul>
-<li><code>O(1)</code>: 제일 이상적입니다. 처리하는 데이터의 양(n)에 관계 없이 상수 시간만큼 소요되는 경우입니다.</li>
-<li><code>O(log n)</code>: 좋은 퍼포먼스를 보여주는 그래프입니다. 데이터 구조에 있는 아이템이 늘어나도 매우 천천히 연산의 횟수가 늘어나게(=걸리는 시간도) 됩니다.</li>
-<li><code>O(n)</code>: 중간 단계의 퍼포먼스를 보여주는 그래프입니다. 데이터 구조랑 연산횟수가 일차함수(linear)를 그리며 증가합니다.</li>
-<li><code>O(n (log n))</code>: (데이터가 10M~100M 넘어갈 경우) 낮은 단계의 퍼포먼스를 보여주는 그래프입니다. 비교 기반 정렬(comparison based sort)의 시간복잡도 하한(lower bound)이기도 합니다.</li>
-<li><code>O(n²)</code>: 데이터구조에 있는 아이템수의 제곱에 비례하여 늘어납니다. 여기서 부턴 성능이 매우 떨어지고, 추천하지 않습니다.</li>
-<li><code>O(2^n)</code>: 2의 데이터 구조의 갯수 제곱만큼 증가합니다. 매우 나쁜 퍼포먼스를 보여줍니다. 원소 n개 집합의 모든 부분집합을 출력하는 경우의 시간복잡도와 같습니다.</li>
-<li><code>O(n!)</code>: 최악의 케이스입니다. 이렇게 코딩이 될 경우에는 답이 없습니다.</li>
-</ul>
-<p><img src="/images/big-o.png" alt="Big-o"></p>
-<h2 id="Common-iOS-Data-Structures"><a href="#Common-iOS-Data-Structures" class="headerlink" title="Common iOS Data Structures"></a>Common iOS Data Structures</h2><p><code>Arrays</code>, <code>Dictionaries</code>, <code>Sets</code> 가 가장 흔한 데이터 구조입니다. 각각의 구조와 성능에 대해 알아봅니다. 또한 <code>Objective-C</code>와<code>Swift</code>에서 각각의 데이터구조를 비교해봅니다.</p>
-<h3 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h3><ul>
-<li><code>Array</code>는 순서를 가지고 있는 배열입니다. <code>index</code>를 통해서 각각의 아이템에 접근 할 수 있습니다. 인덱스를 가지고 아이템을 가져오는 것을 <code>subscripting</code>이라고 합니다.</li>
-<li><code>Objective-C</code>의 <code>NSArray</code>는 <code>Swift</code>에서 <code>let</code>으로 선언된 <code>Array</code>와 같습니다. <code>NSMutableArray</code>는 <code>var</code>로 선언된 <code>Array</code>와 같습니다.</li>
-<li>최악의 케이스는 <code>O(log n)</code>이 실행되지만 보통 <code>O(1)</code>이 연산됩니다.</li>
-<li>모르는 오브젝트를 찾을 경우 최악은 <code>O(n (log n))</code>이 실행되지만 보통 <code>O(n)</code>만큼 연산됩니다.</li>
-<li>데이터를 삭제하거나 넣는 경우 최악은 <code>O(n (log n))</code>이 걸리지만 보통 <code>O(1)</code>만큼 실행됩니다.</li>
-</ul>
-<h5 id="이럴때-쓰면-좋습니다"><a href="#이럴때-쓰면-좋습니다" class="headerlink" title="이럴때 쓰면 좋습니다."></a>이럴때 쓰면 좋습니다.</h5><ul>
-<li><code>item</code>이 어디있는지 아는 경우 동작은 빠르게 작동 할 것입니다.</li>
-<li>아이템이 어디있는지 모를 경우 처음부터 끝까지 동작해야하기 때문에 검색결과가 느립니다.</li>
-<li>아이템을 어디에 넣고 삭제해야 하는지 알고 있다면 어렵지 않겠지만, 배열을 앞뒤로 살펴야 한다는 것은 시간 소비가 큽니다.</li>
-</ul>
-<blockquote>
-<p><code>Swift</code>는 2015년 12월부터 오픈소스입니다. <a href="https://swift.org/source-code/" target="_blank" rel="external">Swift Code</a>로 들어가셔서 구조가 어떻게 되어있는 지 확인해보시는 것도 좋은 방법입니다.</p>
-</blockquote>
-<p>아래는 <code>Objective-C</code>와 <code>Swift</code>의 비교 결과입니다.</p>
-<ul>
-<li>Creating a Swift <code>Array</code> and an <code>NSArray</code> degrade at roughly the same rate between <code>O(log n)</code> and <code>O(n)</code>. <code>Swift</code> is faster than Foundation by roughly 30 times. This is a significant improvement over Swift 2.3, where it was roughly the same as Foundation!</li>
-<li>Adding items to the beginning of an array is considerably slower in a Swift <code>Array</code> than in an <code>NSArray</code>, which is around <code>O(1)</code>. Adding items to the middle of an array takes half the time in Swift <code>Array</code> than in an <code>NSArray</code>. Adding items to the end of a Swift <code>Array</code>, which is less than <code>O(1)</code>, is roughly 6 times faster than adding items to the end of an <code>NSArray</code>, which comes in just over <code>O(1)</code>.</li>
-<li>Removing objects is faster in a Swift <code>Array</code> than a <code>NSArray</code>. From the beginning, middle or end, removing an object degrades between <code>O(log n)</code> and <code>O(n)</code>. Raw time is better in <code>Swift</code> when you remove from the beginning of an Array, but the distinction is a matter of milliseconds.</li>
-<li>Looking up items in <code>Swift</code> is faster for the first time since its inception. Look ups by index grow at very close rates for both Swift <code>Arrays</code> and <code>NSArray</code> while lookup by object is roughly 80 times faster in Swift.</li>
-</ul>
-<p>상기 글은 스위프트가 얼마나 잘 최적화 되었는지 보여줍니다. <code>Swift</code>쓰세요. 두번 쓰세요.</p>
-<h3 id="Dictionaries"><a href="#Dictionaries" class="headerlink" title="Dictionaries"></a>Dictionaries</h3><ul>
-<li>Dictionary(사전)는 특정 순서와 상관없이 <code>key</code>값을 통해서 값을 찾을 수 있는 데이터 구조입니다.</li>
-<li>Dictionary는 <code>subscripting</code>을 지원하기 떄문에, <code>dictionary[&quot;hello&quot;]</code> 와 같은 방법으로 <code>hello</code>라는 <code>key</code>값을 통해서 값에 접근 할 수 있습니다.</li>
-<li><code>NSDictionary</code>와 <code>NSMutableDictionary</code>의 차이는 <code>Array</code>일 경우와 같습니다.</li>
-<li><code>Swift</code>의 Dictionary는 타입을 지정해줘야 합니다. (<code>NSDictionary</code>가 <code>NSObject</code>를 갖는 것 처럼)</li>
-</ul>
-<h5 id="이럴때-쓰면-좋습니다-1"><a href="#이럴때-쓰면-좋습니다-1" class="headerlink" title="이럴때 쓰면 좋습니다."></a>이럴때 쓰면 좋습니다.</h5><ul>
-<li>순서가 없을 경우 Dictionary를 사용하시면 됩니다.</li>
-<li>순서가 아닌 <code>key</code>값으로 접근 할 경우 좋습니다. <code>cats[&quot;Ellen&quot;]</code>이렇게 사용할 경우 Optional이 return되기 때문에 <code>if let</code> 이나 <code>guard</code>로 풀어주는 것을 권장합니다.<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> ellensCat = cats[<span class="string">"Ellen"</span>] &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"Ellen's cat is named \(ellensCat)."</span>)</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"Ellen's cat's name not found!"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>아래는 <code>Objective-C</code>와 <code>Swift</code>의 비교 결과입니다.</p>
-<ul>
-<li>In raw time, creating Swift <code>Dictionaries</code> is roughly 6 times faster than creating <code>NSMutableDictionaries</code> but both degrade at roughly the same <code>O(n</code>) rate.</li>
-<li>Adding items to Swift <code>Dictionaries</code> is roughly 100 times faster than adding them to <code>NSMutableDictionaries</code> in raw time, and both degrade close to the best-case-scenario <code>O(1)</code> rate promised by Apple’s documentation.</li>
-<li>Removing items from Swift <code>Dictionaries</code> is roughly 8 times faster than removing items from <code>NSMutableDictionaries</code>, but the degradation of performance is again close to <code>O(1)</code> for both types.</li>
-<li>Swift is also faster at lookup, with both performing roughly at an <code>O(1)</code> rate. This version of Swift is the first where it beats Foundation by a significant amount.</li>
-</ul>
-<p>퍼포먼스가 크게 차이가 나지 않는다고 합니다.</p>
-<h3 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h3><ul>
-<li>Set(집합)은 순서가 없고 유일한 값을 저장하는 데이터 구조입니다. 중복으로 데이터를 등록 할 수 없습니다.</li>
-<li><code>Set</code>에 선언되어있는 값들은 모두 같은 <code>type</code> 이어야 합니다.</li>
-<li><code>Objective-c</code> 에서는 각각 <code>NSSet</code>과 <code>NSMutableSet</code>이 있습니다.</li>
-</ul>
-<h5 id="이럴때-쓰면-좋습니다-2"><a href="#이럴때-쓰면-좋습니다-2" class="headerlink" title="이럴때 쓰면 좋습니다."></a>이럴때 쓰면 좋습니다.</h5><ul>
-<li>Set은 유니크한 값을 중복없이 뽑을 경우 좋습니다.</li>
-<li><code>Snippet</code>을 하나 보겠습니다.<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> names = [<span class="string">"John"</span>, <span class="string">"Paul"</span>, <span class="string">"George"</span>, <span class="string">"Ringo"</span>, <span class="string">"Mick"</span>, <span class="string">"Keith"</span>, <span class="string">"Charlie"</span>, <span class="string">"Ronnie"</span>]</div><div class="line"><span class="keyword">var</span> stringSet = <span class="type">Set</span>&lt;<span class="type">String</span>&gt;() <span class="comment">// 1</span></div><div class="line"><span class="keyword">var</span> loopsCount = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> stringSet.<span class="built_in">count</span> &lt; <span class="number">4</span> &#123;</div><div class="line">    <span class="keyword">let</span> randomNumber = arc4random_uniform(<span class="type">UInt32</span>(names.<span class="built_in">count</span>)) <span class="comment">// 2</span></div><div class="line">    <span class="keyword">let</span> randomName = names[<span class="type">Int</span>(randomNumber)] <span class="comment">// 3</span></div><div class="line">    <span class="built_in">print</span>(randomName) <span class="comment">// 4</span></div><div class="line">    stringSet.insert(randomName) <span class="comment">// 5</span></div><div class="line">    loopsCount += <span class="number">1</span> <span class="comment">// 6</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 7</span></div><div class="line"><span class="built_in">print</span>(<span class="string">"Loops: "</span> + loopsCount.description + <span class="string">", Set contents: "</span> + stringSet.description)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol>
-<li>Set을 초기화 합니다.</li>
-<li>아이템를 랜덤으로 뽑습니다</li>
-<li>인덱스에 있는 아이를 가져옵니다</li>
-<li>로그를 남깁니다</li>
-<li><code>mutable set</code>에 값을 저장합니다. 만약 값이 저장되어 있는 경우에는 값을 저장하지 않습니다.</li>
-<li>루프 카우트를 늘려서 루프를 다 돌게 합니다</li>
-<li>루프가 끝나면 값을 로그에 남깁니다</li>
-</ol>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="type">John</span></div><div class="line"><span class="type">Ringo</span></div><div class="line"><span class="type">John</span></div><div class="line"><span class="type">Ronnie</span></div><div class="line"><span class="type">Ronnie</span></div><div class="line"><span class="type">George</span></div><div class="line"><span class="type">Loops</span>: <span class="number">6</span>, <span class="type">Set</span> contents: [<span class="string">"Ronnie"</span>, <span class="string">"John"</span>, <span class="string">"Ringo"</span>, <span class="string">"George"</span>]</div></pre></td></tr></table></figure>
-<p>로그에는 6개의 값이 찍혔지만 결론적으로 <code>Set</code>에는 4개의 값이 들어가 있습니다.</p>
-<h2 id="덜-알려졌지만-있는-데이터-구조들"><a href="#덜-알려졌지만-있는-데이터-구조들" class="headerlink" title="덜 알려졌지만 있는 데이터 구조들"></a>덜 알려졌지만 있는 데이터 구조들</h2><h3 id="NSCache"><a href="#NSCache" class="headerlink" title="NSCache"></a>NSCache</h3><ul>
-<li><code>NSCache</code>를 사용하는 것은 <code>NSMutableDictionary</code>를 사용하는것과 매우 유사합니다.</li>
-<li>다른 점은 메모리가 낮아질 경우 <code>NSCache</code>데이터는 지워 질 수 있습니다. 그리고 항상 재생성됩니다.<blockquote>
-<p>캐시는 화면뒤에서 비동기적으로 자동으로 메모리에 상주 할 지, 남을지 결정합니다.</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="NSCountedSet"><a href="#NSCountedSet" class="headerlink" title="NSCountedSet"></a>NSCountedSet</h3><ul>
-<li><code>NSMutableSet</code>을 상속받아서 만들어진 데이터 구조로, 얼마나 많은 오브젝트가 <code>mutable set</code>에 더해해졌는지 알 수 있게 해줍니다.</li>
-<li>하단 코드를 참고해주세요</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> countedMutable = <span class="type">NSCountedSet</span>()</div><div class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names &#123;</div><div class="line">    countedMutable.add(name)</div><div class="line">    countedMutable.add(name)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> ringos = countedMutable.<span class="built_in">count</span>(<span class="keyword">for</span>: <span class="string">"Ringo"</span>)</div><div class="line"><span class="built_in">print</span>(<span class="string">"Counted Mutable set: \(countedMutable)) with count for Ringo: \(ringos)"</span>)</div><div class="line"></div><div class="line"><span class="type">Counted</span> <span class="type">Mutable</span> <span class="keyword">set</span>: &#123;(</div><div class="line">    <span class="type">George</span>,</div><div class="line">    <span class="type">John</span>,</div><div class="line">    <span class="type">Ronnie</span>,</div><div class="line">    <span class="type">Mick</span>,</div><div class="line">    <span class="type">Keith</span>,</div><div class="line">    <span class="type">Charlie</span>,</div><div class="line">    <span class="type">Paul</span>,</div><div class="line">    <span class="type">Ringo</span></div><div class="line">)&#125;) with <span class="built_in">count</span> <span class="keyword">for</span> <span class="type">Ringo</span>: <span class="number">2</span></div></pre></td></tr></table></figure>
-<h3 id="NSOrderedSet"><a href="#NSOrderedSet" class="headerlink" title="NSOrderedSet"></a>NSOrderedSet</h3><ul>
-<li><code>NSOrderedSet</code>은 개별적인 오브젝트들의 그룹을 순서대로 저장 할 수있게 해줍니다.<blockquote>
-<p><code>ordered set</code>을 <code>Array</code>의 대안으로 테스팅할 때 사용해보시면 배열보다 더 빠른것을 느낄 수 있습니다.</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="NSHashTable-and-NSMapTable"><a href="#NSHashTable-and-NSMapTable" class="headerlink" title="NSHashTable and NSMapTable"></a>NSHashTable and NSMapTable</h3><ul>
-<li><code>NSHashTable</code>은 <code>NSMutableSet</code>과 비슷하지만 몇가지 다른점이 있습니다</li>
-<li><code>NSHashTable</code>은 오브젝트 뿐만 아니라 <code>non-object</code>또한 더할 수 있습니다. <code>NSHashTableOptions</code>로 메모리 또한 관리 할 수 있습니다.</li>
-<li><code>NSMapTable</code>은 dictionary 같은 자료구조이지만, <code>NSHashTable</code>과 비슷하게 메모리를 관리한다는 측면이 있습니다.</li>
-</ul>
-<hr>
-<h3 id="Author"><a href="#Author" class="headerlink" title="Author"></a>Author</h3><p><strong><a href="https://younatics.github.io">younatics 🇰🇷</a></strong></p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/06/01/swift-data-structure-kr/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-            <a href="/2017/06/01/swift-data-structure-kr/">
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://younatics.github.io/2017/06/01/swift-data-structure-kr/big-o.png"/>
-                </div>
-            </a>
-            
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
         
-        <li class="pagination-number">page 1 of 1</li>
+        <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="/archives/page/2/">
+                    <span>OLDER POSTS</span>
+                <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+        </li>
+        
+        <li class="pagination-number">page 1 of 2</li>
     </ul>
 </div>
 
@@ -556,25 +401,6 @@
                             <span class="media-date text-small">
                                 
                                     Jun 1, 2017
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://younatics.github.io/2017/07/28/react-native-integrating-with-exisiting-apps/">
-                            <h3 class="media-heading">react-native-integrating-with-exisiting-apps</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    Jul 28, 2017
                                 
                             </span>
                         </span>
