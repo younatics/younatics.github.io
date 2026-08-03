@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["4G7K3CN2JU.com.younatics.daynest"],
+        "components": [
+          {
+            "/": "/apps/daynest/invite/*",
+            "comment": "Daynest invite links open the app instead of the web landing page"
+          }
+        ]
+      }
+    ]
+  }
+}
